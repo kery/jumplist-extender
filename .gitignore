@@ -1,4 +1,5 @@
 *.csproj.user
+.vs/
 obj/
 bin/
 Backup/
@@ -9,3 +10,4 @@ NSISInstaller/Output/*
 *.suo
 _ReSharper.*
 *.resharper.user
+UpgradeLog.htm

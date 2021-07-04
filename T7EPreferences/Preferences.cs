@@ -614,37 +614,11 @@ namespace T7EPreferences
 
         static private string IconPathToLocal(string iconPath, int iconIndex, int itemIndex, string appId, bool isPack)
         {
-            if(isPack)
-                return Path.Combine(PackTempDir,
-                 Path.GetFileNameWithoutExtension(iconPath)
-                 + "_" + iconIndex
-                 + "_" + itemIndex
-                 + ".ico");
-            else 
-                return Path.Combine(Common.Path_AppData, appId + "\\"
-                 + Path.GetFileNameWithoutExtension(iconPath)
-                 + "_" + iconIndex
-                 + "_" + itemIndex
-                 + ".ico");
+            return iconPath;
         }
 
         static private bool SaveLocalIcon(string localIconPath, Bitmap iconBitmap)
         {
-            try
-            {
-                MultiIcon bmIcon = new MultiIcon();
-                SingleIcon bsIcon = bmIcon.Add("Icon 1");
-
-                IconOutputFormat outputFormat = IconOutputFormat.None; // Save icon as is
-
-                bsIcon.CreateFrom(iconBitmap, outputFormat);
-                bsIcon.Save(localIconPath);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
             return true;
         }
         #endregion
